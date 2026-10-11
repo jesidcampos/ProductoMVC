@@ -1,0 +1,27 @@
+@model ProductoMVC.Models.Producto
+
+@{
+    ViewData["Title"] = "Elimar Producto";
+}
+
+<h1>Elimanar Producto</h1>
+
+<h3>¿Estás seguro de que quieres eliminar este producto?</h3>
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nombre)</dt>
+        <dt class="col-sm-9">@Html.DisplayFor(model => model.Nombre)</dt>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Precio)</dt>
+        <dt class="col-sm-6">@Html.DisplayFor(model => model.Precio)</dt>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Stock)</dt>
+        <dt class="col-sm-6">@Html.DisplayFor(model => model.Stock)</dt>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Volver</a>
+    </form>
+</div>
